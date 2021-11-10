@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "283520297810",
+    "project_id": "demotcc-ed955",
+    "storage_bucket": "demotcc-ed955.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:283520297810:android:dcb42260acc82ed389288b",
+        "android_client_info": {
+          "package_name": "com.josipiojr.demo_tcc"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "283520297810-diftd3tm4ul7oa0ta3okvs62qcn99qvv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCb73wxBCRYZMnt7jTd2N4bs_QIJJ42qPU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "283520297810-diftd3tm4ul7oa0ta3okvs62qcn99qvv.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
