@@ -1,17 +1,14 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 
 class Anotacao{
-//  int id ;
-//  String titulo;
-//  String descricao;
-//  String data;
-  int _id ;
-  String _titulo;
-  String _descricao;
-  String _data;
+  int id ;
+  String titulo;
+  String descricao;
+  String data;
+
 
 //******************************************************************************
- //REMOVIDO DEPOIS GETTERSETTER Anotacao( this.titulo, this.descricao, this.data );
+Anotacao( this.titulo, this.descricao, this.data );
 //******************************************************************************
   Anotacao.fromMap( Map map){
 
@@ -35,41 +32,5 @@ class Anotacao{
   }
 //******************************************************************************
 
-  Anotacao.fromDocumentSnapshot(DocumentSnapshot documentSnapshot){
-
-    this.id = documentSnapshot.documentID;
-    this.titulo     = documentSnapshot["titulo"];
-    this.descricao  = documentSnapshot["descricao"];
-
-
-  }
-
-  Anotacao.gerarId(){
-
-    FirebaseFirestore db = FirebaseFirestore.instance;
-    CollectionReference anotacao = db.collection("anotacoes");
-    this.id = anotacao.document().documentID;
-  }
-
-  //GETTER E SETTERS
-  int get id => _id;
-  set id(int value) {
-    _id = value;
-  }
-
-  String get titulo => _titulo;
-  set titulo(String value) {
-    _titulo = value;
-  }
-
-  String get descricao => _descricao;
-  set descricao(String value) {
-    _descricao = value;
-  }
-
-  String get data => _data;
-  set data(String value) {
-    _data = value;
-  }
 
 }

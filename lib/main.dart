@@ -17,35 +17,9 @@ void main() =>  runApp(
 void main() async {
 
 //Configuração Firebase
-    WidgetsFlutterBinding.ensureInitialized();
-    await Firebase.initializeApp();
+   WidgetsFlutterBinding.ensureInitialized();
+   await Firebase.initializeApp();
 
-    FirebaseFirestore db = FirebaseFirestore.instance;
-
-//****************SALVAR E ATUALIZAR***********************************
-  var _db = AnotacaoHelper();
-  List<Anotacao> _anotacoes = List<Anotacao>();
-
-  enviarCloud() async {
-//    List anotacoesRecuperadas = await _db.recuperarAnotacoes();
-//    List<Anotacao> listaTemporaria = List<Anotacao>();
-    Anotacao anotacao;
-//    for (var item in anotacoesRecuperadas) {
-
-      db.collection("anotacao")
-          .add({
-        "titulo": anotacao.titulo,
-        "descricao": anotacao.descricao
-      });
-//    }
-  }
-
-//
-//  DocumentReference ref = await db.collection("teste")
-//  .add({
-//    "nome":"Junior",
-//    "idade": "31"
-//  });
 
   runApp(MaterialApp(
     debugShowCheckedModeBanner: false,

@@ -20,7 +20,7 @@ class _HomeState extends State<Home> {
   List<Anotacao> _anotacoes = List<Anotacao>();
 
   //TESTE DE UPLOAD DE DADOS PARA O FIREBASE
-  String _statusUpload = "Upload não iniciado";
+  //String _statusUpload = "Upload não iniciado";
 
 //******************************************************************************
   _exibirTelaCadastro( { Anotacao anotacao }){
@@ -118,6 +118,8 @@ class _HomeState extends State<Home> {
     _tituloController.clear();
     _descricaoController.clear();
     _recuperarAnotacoes();
+    enviarNuvem( );
+
 
 
 
@@ -138,19 +140,34 @@ class _HomeState extends State<Home> {
   _removerAnotacao( int id ) async {
     await _db.removerAnotacao( id );
     _recuperarAnotacoes();
+
   }
-  //******************************************************************************
 
-  //TESTE DE ENVIO PARA FIREBASE
+//**************** TESTE DE ENVIO PARA FIREBASE SALVAR E ATUALIZAR***********************************
+  enviarNuvem( ) async {
+  List anotacoesRecuperadas = await _db.recuperarAnotacoes();
+  FirebaseFirestore db = FirebaseFirestore.instance;
+
+     for (var item in anotacoesRecuperadas) {
+      db.collection("anotacao")
+      .doc(item.id )
+      .set({
+            "titulo": item.titulo,
+            "descricao": item.descricao,
+           });
+    }
+  }
 
 
 
-  //******************************************************************************
+
+//******************************************************************************
   @override
   void initState() {
     // TODO: implement initState
     super.initState();
     _recuperarAnotacoes();
+
   }
 //******************************************************************************
   @override
